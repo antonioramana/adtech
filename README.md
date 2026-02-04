@@ -98,20 +98,6 @@ Le script `scripts/seedCampaign.js` crée une campagne "Campagne CTV Q2" pour l'
 
 Les schémas et endpoints sont décrits avec des commentaires JSDoc dans `routes/campaignRoutes.js`.
 
-#### Choix techniques backend
-
-- **Express + Mongoose**: stack très standard, lisible en entretien.
-- **Pattern service / controller**:
-  - `services/campaignService.js`: logique métier, validation, pagination, stats.
-  - `controllers`: se concentrent sur les codes HTTP et la forme des réponses.
-- **Validation Joi**:
-  - Vérifie les champs requis (`name`, `advertiser`, `budget`, `startDate`, `endDate`…)
-  - Contrainte métier: `endDate >= startDate`
-  - Gère les statuts (`active | paused | finished`) et les valeurs numériques >= 0.
-- **Stats**:
-  - CTR: protégé contre la division par zéro (0 si pas d’impressions).
-  - CPC: 0 si aucun clic.
-
 ---
 
 ### 3. Frontend – Lancer l’interface
@@ -179,15 +165,3 @@ Interface disponible sur l’URL affichée par Vite (souvent `http://localhost:5
   - Bouton **Activer / Mettre en pause**:
     - Toggle entre `active` et `paused` via `/campaigns/:id/status`
     - Une campagne `finished` est non modifiable.
-
-#### Choix techniques frontend
-
-- **React + Vite**: démarrage très rapide, DX simple.
-- **Tailwind v4**: permet un design propre en quelques classes utilitaires.
-- **React Router**:
-  - 3 routes claires: liste, création, détail.
-  - Layout simple avec barre de navigation et CTA.
-- **Layer API typé** (`src/api.ts`):
-  - Centralise l’URL de l’API (`VITE_API_URL`).
-  - Types pour `Campaign`, `CampaignStatus`.
-  - Erreurs API normalisées (`throw new Error(message)`).
