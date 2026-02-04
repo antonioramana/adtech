@@ -19,9 +19,11 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'Mini plateforme de gestion de campagnes publicitaires',
   },
+  // Utiliser une URL relative pour que Swagger pointe automatiquement
+  // vers le bon host (localhost en dev, Render en prod).
   servers: [
     {
-      url: 'http://localhost:' + (process.env.PORT || 5000) + '/api',
+      url: '/api',
     },
   ],
 };
