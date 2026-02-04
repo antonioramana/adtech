@@ -25,7 +25,10 @@ export function CampaignDetail() {
       try {
         setLoading(true);
         setError(null);
-        const [c, s] = await Promise.all([fetchCampaign(id), fetchCampaignStats(id)]);
+        const [c, s] = await Promise.all([
+          fetchCampaign(id!),
+          fetchCampaignStats(id!),
+        ]);
         setCampaign(c);
         setStats(s);
       } catch (e) {
