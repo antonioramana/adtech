@@ -18,6 +18,17 @@ Projet fullstack simple pour gérer des campagnes digitales (contexte AdTech) av
 
 ---
 
+## 📑 Sommaire
+
+- [1. Structure du projet](#1-structure-du-projet)
+- [2. Backend – Lancer l'API](#2-backend--lancer-lapi)
+- [3. Frontend – Lancer l'interface](#3-frontend--lancer-linterface)
+- [4. UX / pages implémentées](#4-ux--pages-implémentées)
+- [5. Choix techniques](#5-choix-techniques)
+- [6. Ce que j'améliorerais avec plus de temps](#6-ce-que-jaméliorerais-avec-plus-de-temps)
+
+---
+
 ### 1. Structure du projet
 
 - **`adtech-backend`**: API REST pour gérer les campagnes
